@@ -21,6 +21,10 @@ def main():
         screen.fill((0, 0, 0))
         dt = clock.tick(60) / 1000
         player.update(dt)
+        while player.rotation >= 360.0:
+            player.rotation -= 360
+        while player.rotation <= -360.0:
+            player.rotation += 360
         player.draw(screen)
         pygame.display.flip()
 
