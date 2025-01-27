@@ -39,6 +39,10 @@ def main():
             if rock.collision(player):
                 print("Game over!")
                 sys.exit()
+            for bullet in shots:
+                if rock.collision(bullet):
+                    rock.split()
+                    bullet.kill()
         while player.rotation >= 360.0:
             player.rotation -= 360
         while player.rotation <= -360.0:
